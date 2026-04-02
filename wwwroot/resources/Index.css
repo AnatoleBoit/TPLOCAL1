@@ -1,0 +1,25 @@
+﻿.image {
+    width: 150px;
+    height: 150px;
+}
+
+h1 {
+    margin-left: 170px;
+    margin-right: 170px;
+    text-align: center;
+}
+
+nav {
+    width: 150px;
+    border: 2px solid #8c014c;
+    background-color: #8c014c;
+}
+
+li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+a {
+    color: chocolate;
+}
