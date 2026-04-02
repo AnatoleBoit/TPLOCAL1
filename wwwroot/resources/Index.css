@@ -1,19 +1,24 @@
 ﻿.image {
     width: 150px;
     height: 150px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 h1 {
     margin-left: 170px;
     margin-right: 170px;
     text-align: center;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 nav {
-    width: 150px;
     float: left;
+    width: 150px;
     border: 2px solid #8c014c;
     background-color: #8c014c;
+    color: white;
 }
 
 li {
@@ -27,4 +32,45 @@ a {
 
 section {
     margin-left: 170px;
+}
+
+.form-div {
+    width: 500px;
+    align-content: center;
+    margin-left: 190px;
+    border: solid black;
+    margin-top: 12px;
+}
+
+.form-title {
+    text-align: center;
+}
+
+.form-table {
+    padding: 10px;
+}
+
+.form-info {
+    border: solid black;
+    margin-top: 50px;
+}
+
+.form-label {
+    width: 150px;
+}
+
+.form-control {
+    margin-top: 8px;
+    width: 250px;
+}
+
+.form-valide-div {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.form-valide {
+    width: 100px;
 }

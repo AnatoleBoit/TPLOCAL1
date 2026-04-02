@@ -1,6 +1,7 @@
-﻿
+﻿@model TPLOCAL1.Models.Form
+
 @{
-    Layout = null;
+    ViewData["Title"] = "Formulaire";
 }
 
 <!DOCTYPE html>
@@ -8,7 +9,144 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Form</title>
+
+    <link rel="stylesheet" href="~/resources/Index.css" />
 </head>
 <body>
+    <header>
+        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+        <h1>Formulaire TP HN Avis</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/Home/Index">Accueil</a></li>
+            <li><a href="/Home/Index/AvisList">Avis list</a></li>
+        </ul>
+    </nav>
+    <div class="form-div">
+        <form asp-controller="HomeController" asp-action="ValidationFormulaire">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <h4 class="form-title">Informations Personnelles</h4>
+            <table class="form-table">
+                <tr class="form-info">
+                    <td class="form-label">
+                        <label asp-for="Nom" class="control-label"></label>
+                    </td>
+                    <td class="form-input">
+                        <input asp-for="Nom" class="form-control" required/>
+                        <span asp-validation-for="Nom" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr class="form-info">
+                    <td class="form-label">
+                        <label asp-for="Prenom" class="control-label"></label>
+                     </td>
+                    <td class="form-input">
+                        <input asp-for="Prenom" class="form-control" required/>
+                        <span asp-validation-for="Prenom" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr class="form-info">
+                    <td class="form-label">
+                        <label asp-for="Genre" class="control-label"></label>
+                    </td>
+                    <td class="form-input">
+                        <select asp-for="Genre" class="form-control" name="genre" id="genre" required>
+                            <option value="">Séléctionner un genre</option>
+                            <option value="homme">Homme</option>
+                            <option value="femme">Femme</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                        <span asp-validation-for="Genre" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr class="form-info">
+                    <td class="form-label">
+                        <label asp-for="Adresse" class="control-label"></label>
+                    </td>
+                    <td class="form-input">
+                        <input asp-for="Adresse" class="form-control" required />
+                        <span asp-validation-for="Adresse" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr class="form-info">
+                    <td class="form-label">
+                        <label asp-for="CodePostal" class="control-label"></label>
+                    </td>
+                    <td class="form-input">
+                        <input asp-for="CodePostal" class="form-control" required />
+                        <span asp-validation-for="CodePostal" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr class="form-info">
+                    <td class="form-label">
+                        <label asp-for="Ville" class="control-label"></label>
+                    </td>
+                    <td class="form-input">
+                        <input asp-for="Ville" class="form-control" required />
+                        <span asp-validation-for="Ville" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr class="form-info">
+                    <td class="form-label">
+                        <label asp-for="Email" class="control-label"></label>
+                    </td>
+                    <td class="form-input">
+                        <input asp-for="Email" class="form-control" required />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </td>
+                </tr>
+            </table>
+            <h4 class="form-title">Informations sur la formation</h4>
+            <table class="form-table">
+                <tr class="form-info">
+                    <td class="form-label">
+                        <label asp-for="DateDebutFormation" class="control-label"></label>
+                    </td>
+                    <td class="form-input">
+                        <input asp-for="DateDebutFormation" class="form-control" required />
+                        <span asp-validation-for="DateDebutFormation" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr class="form-info">
+                    <td class="form-label">
+                        <label asp-for="FormationSuivie" class="control-label"></label>
+                    </td>
+                    <td class="form-input">
+                        <select asp-for="FormationSuivie" class="form-control" name="formation-suivie" id="formationsuivie" required>
+                            <option value="">Séléctionner une formation</option>
+                            <option value="cobol">COBOL</option>
+                            <option value="csharp">C#</option>
+                        </select>
+                        <span asp-validation-for="FormationSuivie" class="text-danger"></span>
+                    </td>
+                </tr>
+            </table>
+            <h4 class="form-title">Avis la formation</h4>
+            <table class="form-table">
+                <tr class="form-info">
+                    <td class="form-label">
+                        <label asp-for="AvisFormCobol" class="control-label"></label>
+                    </td>
+                    <td class="form-input">
+                        <input asp-for="AvisFormCobol" class="form-control" />
+                        <span asp-validation-for="AvisFormCobol" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr class="form-info">
+                    <td class="form-label">
+                        <label asp-for="AvisFormCSharp" class="control-label"></label>
+                    </td>
+                    <td class="form-input">
+                        <input asp-for="AvisFormCSharp" class="form-control" />
+                        <span asp-validation-for="AvisFormCSharp" class="text-danger"></span>
+                    </td>
+                </tr>
+            </table>
+            <div class=" = form-valide-div">
+                <button type="submit" value="ValidationFormulaire" asp-action="ValidationFormulaire" class="form-valide">Valider</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
