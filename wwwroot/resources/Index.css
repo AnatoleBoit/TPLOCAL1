@@ -11,6 +11,7 @@ h1 {
 
 nav {
     width: 150px;
+    float: left;
     border: 2px solid #8c014c;
     background-color: #8c014c;
 }
@@ -22,4 +23,8 @@ li {
 
 a {
     color: chocolate;
+}
+
+section {
+    margin-left: 170px;
 }
