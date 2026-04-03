@@ -83,7 +83,12 @@ public class HomeController : Controller
         //TODO : test if model's fields are set
         //if not, display an error message and stay on the form page
         //else, call ValidationForm with the datas set by the user
-        return View();
-        
+        return View("ValidationFormulaire", form);
+
+    }
+
+    public ActionResult ValidationFormulaire()
+    {
+        return View("ValidationFormulaire");
     }
 }

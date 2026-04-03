@@ -10,3 +10,105 @@
     ViewData["Route2Text"] = "Avis Liste";
 }
 
+<div class="form-div">
+    <h4 class="form-title">Informations Personnelles</h4>
+    <table class="form-table">
+        <tr class="form-info">
+            <td class="form-label">
+                <label asp-for="Nom" class="control-label"></label>
+            </td>
+            <td class="form-input">
+                <p class="form-control">@Model.Nom</p>
+            </td>
+        </tr>
+        <tr class="form-info">
+            <td class="form-label">
+                <label asp-for="Prenom" class="control-label"></label>
+            </td>
+            <td class="form-input">
+                <p class="form-control">@Model.Prenom</p>
+            </td>
+        </tr>
+        <tr class="form-info">
+            <td class="form-label">
+                <label asp-for="Genre" class="control-label"></label>
+            </td>
+            <td class="form-input">
+                <p class="form-control">@Model.Genre</p>
+            </td>
+        </tr>
+        <tr class="form-info">
+            <td class="form-label">
+                <label asp-for="Adresse" class="control-label"></label>
+            </td>
+            <td class="form-input">
+                <p class="form-control">@Model.Adresse</p>
+            </td>
+        </tr>
+        <tr class="form-info">
+            <td class="form-label">
+                <label asp-for="CodePostal" class="control-label"></label>
+            </td>
+            <td class="form-input">
+                <p class="form-control">@Model.CodePostal</p>
+            </td>
+        </tr>
+        <tr class="form-info">
+            <td class="form-label">
+                <label asp-for="Ville" class="control-label"></label>
+            </td>
+            <td class="form-input">
+                <p class="form-control">@Model.Ville</p>
+            </td>
+        </tr>
+        <tr class="form-info">
+            <td class="form-label">
+                <label asp-for="Email" class="control-label"></label>
+            </td>
+            <td class="form-input">
+                <p class="form-control">@Model.Email</p>
+            </td>
+        </tr>
+    </table>
+    <h4 class="form-title">Informations sur la formation</h4>
+    <table class="form-table">
+        <tr class="form-info">
+            <td class="form-label">
+                <label asp-for="DateDebutFormation" class="control-label"></label>
+            </td>
+            <td class="form-input">
+                <p class="form-control">@Model.DateDebutFormation</p>
+            </td>
+        </tr>
+        <tr class="form-info">
+            <td class="form-label">
+                <label asp-for="FormationSuivie" class="control-label"></label>
+            </td>
+            <td class="form-input">
+                <p class="form-control">@Model.FormationSuivie</p>
+            </td>
+        </tr>
+    </table>
+    <h4 class="form-title">Avis la formation</h4>
+    <table class="form-table">
+        <tr class="form-info">
+            <td class="form-label">
+                <label asp-for="AvisFormCobol" class="control-label"></label>
+            </td>
+            <td class="form-input">
+                <p class="form-control">@Model.AvisFormCobol</p>
+            </td>
+        </tr>
+        <tr class="form-info">
+            <td class="form-label">
+                <label asp-for="AvisFormCSharp" class="control-label"></label>
+            </td>
+            <td class="form-input">
+                <p class="form-control">@Model.AvisFormCSharp</p>
+            </td>
+        </tr>
+    </table>
+    <div class=" = form-valide-div">
+        <a href="/Home" class="form-valide">Retour</a>
+    </div>
+</div>

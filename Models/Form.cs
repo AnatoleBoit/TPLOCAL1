@@ -41,7 +41,7 @@ public class Form
     [Required]
     [Display(Name = "Date début formation")]
     [DataType(DataType.Date)]
-    public DateTime? DateDebutFormation { get; set;  }
+    public DateOnly? DateDebutFormation { get; set;  }
 
     [Required]
     [Display(Name = "Formation suivie")]

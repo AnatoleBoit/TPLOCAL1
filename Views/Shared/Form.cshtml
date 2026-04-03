@@ -38,11 +38,11 @@
                     <label asp-for="Genre" class="control-label"></label>
                 </td>
                 <td class="form-input">
-                    <select asp-for="Genre" class="form-control" name="genre" id="genre" required>
+                    <select asp-for="Genre" class="form-control" required>
                         <option value="">Séléctionner un genre</option>
-                        <option value="homme">Homme</option>
-                        <option value="femme">Femme</option>
-                        <option value="autre">Autre</option>
+                        <option value="Homme">Homme</option>
+                        <option value="Femme">Femme</option>
+                        <option value="Autre">Autre</option>
                     </select>
                     <span asp-validation-for="Genre" class="text-danger"></span>
                 </td>
@@ -100,10 +100,11 @@
                     <label asp-for="FormationSuivie" class="control-label"></label>
                 </td>
                 <td class="form-input">
-                    <select asp-for="FormationSuivie" class="form-control" name="formation-suivie" id="formationsuivie" required>
+                    <select asp-for="FormationSuivie" class="form-control" required>
                         <option value="">Séléctionner une formation</option>
-                        <option value="cobol">COBOL</option>
-                        <option value="csharp">C#</option>
+                        <option value="COBOL">COBOL</option>
+                        <option value="C#">C#</option>
+                        <option value="Double Compétence">Double Compétence</option>
                     </select>
                     <span asp-validation-for="FormationSuivie" class="text-danger"></span>
                 </td>
