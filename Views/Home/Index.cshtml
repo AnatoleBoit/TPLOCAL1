@@ -1,31 +1,15 @@
 ﻿@{
-    Layout = null;
+    Layout = "_Layout";
+    ViewData["Title"] = "HN - TPLOCAL";
+    ViewData["Header"] = "Bienvenue chez TP HN";
+    ViewData["Route1"] = "/Home/Index/Form";
+    ViewData["Route1Text"] = "Formulaire";
+    ViewData["Route2"] = "/Home/Index/AvisListe";
+    ViewData["Route2Text"] = "Avis Liste";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>HN - TPLOCAL</title>
-
-    <link rel="stylesheet" href="~/resources/Index.css" />
-</head>
-<body>
-    <header>
-        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
-        <h1>Bienvenue chez TP HN</h1>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="/Home/Index/Form">Remplissez le formulaire</a></li>
-            <li><a href="/Home/Index/AvisList">Avis list</a></li>
-        </ul>
-    </nav>
-    <section>
-        <p>
-            <a href="/Home/Index/Form">Remplissez le formulaire </a>
-        </p>
-    </section>
-</body>
-</html>
+<section>
+    <p>
+        <a href="/Home/Index/Form">Remplissez le formulaire </a>
+    </p>
+</section>
