@@ -1,4 +1,4 @@
-﻿
+﻿@model List<TPLOCAL1.Models.Opinion>
 
 @{
     Layout = "_Layout";
@@ -9,3 +9,27 @@
     ViewData["Route2"] = "/Home/Index/Form";
     ViewData["Route2Text"] = "Formulaire";
 }
+
+<div class="avis-div">
+    <h4 class="avis-titre">LISTE</h4>
+    <table class="avis-tableau">
+        <thead>
+            <tr class="avis-ligne">
+                <th class="avis-element">Nom</th>
+                <th class="avis-element">Prénom</th>
+                <th class="avis-element">Avis Donné</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                bool avisOui = item.OpinionGiven == "O";
+                <tr class="avis-ligne">
+                    <td class="avis-element">@item.LastName</td>
+                    <td class="avis-element">@item.FirstName</td>
+                    <td class=@(avisOui ? "avis-oui" : "avis-non")>@(item.OpinionGiven == "O" ? "Oui" : "Non")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

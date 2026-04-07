@@ -74,3 +74,44 @@ section {
 .form-valide {
     width: 100px;
 }
+
+text-danger {
+    color: darkred;
+}
+
+.avis-ligne {
+    border: solid black;
+    margin-top: 50px;
+}
+
+.avis-element {
+    width: 100px;
+    border: double gray;
+}
+
+.avis-tableau {
+    border: outset black;
+}
+
+.avis-div {
+    width: max-content;
+    height: max-content;
+    text-align: center;
+    margin-left: 190px;
+}
+
+.avis-oui {
+    background-color: lightgreen;
+    width: 100px;
+    border: double gray;
+}
+
+.avis-non {
+    background-color: red;
+    width: 100px;
+    border: double gray;
+}
+
+.avis-titre {
+    text-align: center;
+}
