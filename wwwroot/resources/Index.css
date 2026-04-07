@@ -81,7 +81,7 @@ section {
     text-align: center;
 }
 
-text-danger {
+.text-danger {
     color: darkred;
 }
 

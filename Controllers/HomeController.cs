@@ -40,69 +40,7 @@ public class HomeController : Controller
     [HttpPost]
     public ActionResult ValidationFormulaire([Bind("Id,Nom,Prenom,Genre,Adresse,CodePostal,Ville,Email,DateDebutFormation,FormationSuivie,AvisFormCobol,AvisFormCSharp")] Form form)
     {
-        bool erreur = false;
-        if (String.IsNullOrEmpty(form.Nom))
-        {
-            erreur = true;
-            ModelState.AddModelError("Nom", "Le Nom n'a pas été renseigné.");
-        }
-        if (String.IsNullOrEmpty(form.Prenom))
-        {
-            erreur = true;
-            ModelState.AddModelError("Prenom", "Le Prenom n'a pas été renseigné.");
-        }
-        if (String.IsNullOrEmpty(form.Genre))
-        {
-            erreur = true;
-            ModelState.AddModelError("Genre", "Le Genre n'a pas été renseigné.");
-        }
-        if (String.IsNullOrEmpty(form.Adresse))
-        {
-            erreur = true;
-            ModelState.AddModelError("Adresse", "L'Adresse n'a pas été renseignée.");
-        }
-        if (String.IsNullOrEmpty(form.CodePostal))
-        {
-            erreur = true;
-            ModelState.AddModelError("CodePostal", "Le Code Postal n'a pas été renseigné.");
-        }
-        if (form.CodePostal != null && !Regex.IsMatch(form.CodePostal, @"^[0-9]{5}$"))
-        {
-            erreur = true;
-            ModelState.AddModelError("CodePostal", "Le Code Postal doit être composé de 5 chiffres.");
-        }
-        if (String.IsNullOrEmpty(form.Ville))
-        {
-            erreur = true;
-            ModelState.AddModelError("Ville", "La Ville n'a pas été renseignée.");
-        }
-        if (String.IsNullOrEmpty(form.Email))
-        {
-            erreur = true;
-            ModelState.AddModelError("Email", "L'Adresse E-Mail n'a pas été renseignée.");
-        }
-        if (form.Email != null && IsInvalidEmail(form.Email))
-        {
-            erreur = true;
-            ModelState.AddModelError("Email", "L'Adresse E-Mail n'est pas valide.");
-        }
-        if (form.DateDebutFormation == null)
-        {
-            erreur = true;
-            ModelState.AddModelError("DateDebutFormation", "La date n'a pas été renseignée.");
-        }
-        if (form.DateDebutFormation != null && form.DateDebutFormation > new DateOnly(2021,01,01)) //DateDebutForm
-        {
-            erreur = true;
-            ModelState.AddModelError("DateDebutFormation", "La date doit être inférieur au 01/01/2021.");
-        }
-        if (String.IsNullOrEmpty(form.FormationSuivie))
-        {
-            erreur = true;
-            ModelState.AddModelError("FormationSuivie", "La Formation n'a pas été renseignée.");
-        }
-
-        if (erreur)
+        if (!ModelState.IsValid)
         {
             return View("Form");
         }
@@ -112,22 +50,7 @@ public class HomeController : Controller
 
     public ActionResult ValidationFormulaire()
     {
-        return View("ValidationFormulaire");
-    }
-
-    private static bool IsInvalidEmail(string email)
-    {
-        if (string.IsNullOrWhiteSpace(email))
-            return true;
-        try
-        {
-            MailAddress addr = new MailAddress(email);
-            return addr.Address != email;
-        }
-        catch
-        {
-            return true;
-        }
+        return View();
     }
 
 }
