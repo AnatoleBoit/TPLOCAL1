@@ -75,6 +75,12 @@ section {
     width: 100px;
 }
 
+.validation-titre {
+    margin-left: 190px;
+    width: 500px;
+    text-align: center;
+}
+
 text-danger {
     color: darkred;
 }
